@@ -12,9 +12,5 @@ import XCTest
 class GreetingTests: XCTestCase {
     func testSay() {
         XCTAssertEqual(Greeting.say(), "Hello, World!")
-    }
-
-    func testFailingSay() {
-        XCTAssertEqual(Greeting.say(), "Hello, World")
-    }
+    }   
 }
