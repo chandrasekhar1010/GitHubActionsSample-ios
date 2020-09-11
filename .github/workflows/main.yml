@@ -25,11 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install Pods
+        run: bundle exec pod install
+
       - name: Show Xcode version
         run: xcodebuild -version
 
       - name: Build
         run: xcodebuild
+          -workspace GitHubActionsSample.xcworkspace
           -scheme GitHubActionsSample
           -sdk iphonesimulator
           -configuration Debug
@@ -37,6 +41,7 @@ jobs:
 
       - name: Run unit tests
         run: xcodebuild
+          -workspace GitHubActionsSample.xcworkspace
           -scheme GitHubActionsSample
           -sdk iphonesimulator
           -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max'
@@ -48,7 +53,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: "** TEST FAILED **"
+          text: "*TEST FAILED*"
           attachments: |
             [
               {
@@ -78,7 +83,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: "** TEST SUCCEEDED **"
+          text: "*TEST SUCCEEDED*"
           attachments: |
             [
               {
