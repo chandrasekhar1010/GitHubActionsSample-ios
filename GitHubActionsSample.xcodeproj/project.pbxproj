@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		118EEAC328FB91E90EBC903C /* Pods_GitHubActionsSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C25EB6856B0A0947EDCFA2C /* Pods_GitHubActionsSample.framework */; };
 		2CBED929EFEF088F6E2D41B6 /* Pods_GitHubActionsSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5004D0177D3E8EE6023430CB /* Pods_GitHubActionsSampleTests.framework */; };
+		7A18863D250F898E00EE228B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7A18863C250F898E00EE228B /* Alamofire */; };
+		7A18863F250F8A0100EE228B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18863E250F8A0100EE228B /* ViewModel.swift */; };
 		7A6FC02D250AF6970097920F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FC02C250AF6970097920F /* AppDelegate.swift */; };
 		7A6FC02F250AF6970097920F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FC02E250AF6970097920F /* SceneDelegate.swift */; };
 		7A6FC031250AF6970097920F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6FC030250AF6970097920F /* ContentView.swift */; };
@@ -35,6 +37,7 @@
 		4F7951BF69151AAF7DD94332 /* Pods-GitHubActionsSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubActionsSample.debug.xcconfig"; path = "Target Support Files/Pods-GitHubActionsSample/Pods-GitHubActionsSample.debug.xcconfig"; sourceTree = "<group>"; };
 		5004D0177D3E8EE6023430CB /* Pods_GitHubActionsSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubActionsSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59DAEDB1EB02CCB4D48F0473 /* Pods-GitHubActionsSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubActionsSample.release.xcconfig"; path = "Target Support Files/Pods-GitHubActionsSample/Pods-GitHubActionsSample.release.xcconfig"; sourceTree = "<group>"; };
+		7A18863E250F8A0100EE228B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		7A6FC029250AF6970097920F /* GitHubActionsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubActionsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A6FC02C250AF6970097920F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A6FC02E250AF6970097920F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				118EEAC328FB91E90EBC903C /* Pods_GitHubActionsSample.framework in Frameworks */,
+				7A18863D250F898E00EE228B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 				7A6FC02E250AF6970097920F /* SceneDelegate.swift */,
 				7A6FC030250AF6970097920F /* ContentView.swift */,
 				7A6FC04E250AF6D50097920F /* Greeting.swift */,
+				7A18863E250F8A0100EE228B /* ViewModel.swift */,
 				7A6FC032250AF6970097920F /* Assets.xcassets */,
 				7A6FC037250AF6970097920F /* LaunchScreen.storyboard */,
 				7A6FC03A250AF6970097920F /* Info.plist */,
@@ -130,7 +135,6 @@
 				1D7EF0ED1A1981B7FED34242 /* Pods-GitHubActionsSampleTests.debug.xcconfig */,
 				FA37AD0171E2D5273CAA6806 /* Pods-GitHubActionsSampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,6 +165,9 @@
 			dependencies = (
 			);
 			name = GitHubActionsSample;
+			packageProductDependencies = (
+				7A18863C250F898E00EE228B /* Alamofire */,
+			);
 			productName = GitHubActionsSample;
 			productReference = 7A6FC029250AF6970097920F /* GitHubActionsSample.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +219,9 @@
 				Base,
 			);
 			mainGroup = 7A6FC020250AF6970097920F;
+			packageReferences = (
+				7A18863B250F898E00EE228B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 7A6FC02A250AF6970097920F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A18863F250F8A0100EE228B /* ViewModel.swift in Sources */,
 				7A6FC02D250AF6970097920F /* AppDelegate.swift in Sources */,
 				7A6FC02F250AF6970097920F /* SceneDelegate.swift in Sources */,
 				7A6FC04F250AF6D50097920F /* Greeting.swift in Sources */,
@@ -578,6 +589,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A18863B250F898E00EE228B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A18863C250F898E00EE228B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A18863B250F898E00EE228B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A6FC021250AF6970097920F /* Project object */;
 }
