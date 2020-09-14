@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ViewModel()
+
     var body: some View {
-        Text(Greeting.say())
+        VStack {
+            Text(viewModel.text1)
+            Text(viewModel.text2)
+        }
+        .onAppear { self.viewModel.onAppear() }
     }
 }
 
