@@ -59,6 +59,9 @@ jobs:
 
       - name: Show Xcode version
         run: xcodebuild -version
+        
+      - name: Show Xcode version
+        run: xcodebuild -version
 
       - name: Build
         run: xcodebuild
